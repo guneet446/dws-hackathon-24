@@ -54,11 +54,11 @@ const Header = () => {
               Build your own product
             </Link>
             <Link
-              to="/dashboard"
+              to="/kyip"
               className="block px-4 py-2 text-gray-700 hover:bg-indigo-100"
               onClick={() => setMenuOpen(false)}
             >
-              KYO
+              KYIP
             </Link>
             <Link
               to="/gamezone"

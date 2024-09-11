@@ -172,6 +172,9 @@ const ProductList = () => {
     }
   };
 
+  // Limit to 6 products for display
+  const displayedProducts = products.slice(0, 6);
+
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
@@ -186,9 +189,11 @@ const ProductList = () => {
           <option value="year5">5 Year Return</option>
         </select>
       </div>
-      <div className="flex overflow-x-auto space-x-4 pb-4">
-        {products.map((product) => (
-          <div key={product.fundID} className="w-80 bg-white shadow-md rounded-lg p-4 flex-shrink-0">
+      
+      {/* 3x2 grid for the products */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {displayedProducts.map((product) => (
+          <div key={product.fundID} className="bg-white shadow-md rounded-lg p-4">
             <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.fundName}</h3>
             <div className="flex flex-col md:flex-row space-x-4">
               {/* Column 1 */}
@@ -198,12 +203,11 @@ const ProductList = () => {
               </div>
 
               {/* Column 2 */}
-              <div className="flex-1">
-              <p className="text-gray-600">
+              <div>
+                <p className="flex-1 text-gray-600">
                   Return: {getReturnValue(product)}%
                 </p>
                 <p className="text-gray-600 mb-2">Risk: {product.riskLevel}</p>
-                
               </div>
             </div>
           </div>

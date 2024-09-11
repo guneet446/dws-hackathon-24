@@ -9,6 +9,7 @@ import BasketBuilder from './pages/build-basket/build-basket';
 import Leaderboard from './pages/gamezone/leaderboard';
 import { Gamezone } from './pages/gamezone/gamezone';
 import MyProfile from './pages/profile/profile';
+import PersonalityQuiz from './pages/kyo/kyo';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/build-basket" element={<BasketBuilder />} />
           <Route path="/gamezone" element={<Gamezone />} />
           <Route path="/profile" element={<MyProfile />} />
+          <Route path="/kyip" element={<PersonalityQuiz />} />
           <Route path="/" element={<Navigate to="/signin" />} />
 
         </Routes>
