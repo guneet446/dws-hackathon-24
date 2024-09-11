@@ -175,7 +175,7 @@ export const quizData = [
         { answer: "Avoid the fund for higher returns elsewhere", score: "conservative" },
         { answer: "Invest a portion of your portfolio in the fund", score: "balanced" },
         { answer: "Invest heavily due to your values and beliefs", score: "riskTaker" },
-        { answer: "Include the fund as part of a diversified investment strategy", score: "moderate" },
+        { answer: "Include the DWS Global Equity Funds part of a diversified investment strategy", score: "moderate" },
         { answer: "Consult with a financial advisor to evaluate the fund’s potential", score: "cautious" },
       ],
     },

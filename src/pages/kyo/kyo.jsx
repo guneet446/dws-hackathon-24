@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { descriptions, quizData } from "./quizData";
 import Header from "../dashboard/header";
 
@@ -85,7 +85,6 @@ const PersonalityQuiz = () => {
     <><Header /><div className="min-h-screen bg-gray-100 flex justify-center items-center p-8">
           <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
               <h2 className="text-2xl font-bold text-indigo-600 mb-4">Investment Personality Quiz</h2>
-
               {isComplete ? (
                   <div className="h-full bg-gray-100 p-8 flex flex-col items-center justify-center">
                       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
@@ -96,6 +95,7 @@ const PersonalityQuiz = () => {
                   </div>
               ) : (
                   <div>
+                    <h3>{currentScenario}/{11}</h3>
                       <h3 className="text-lg font-semibold mb-4">
                           {quizData[currentScenario].scenario}
                       </h3>

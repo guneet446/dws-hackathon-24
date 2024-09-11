@@ -6,8 +6,8 @@ const portfolioData = {
   currentValue: 650000,   // Example current value
   returnPercentage: 30,   // Example return percentage
   recentPurchases: [
-    { date: "2024-09-01", description: "Product 4", amount: 50000 },
-    { date: "2024-07-20", description: "Product 3", amount: 45000 }
+    { date: "2024-09-01", description: "DWS Commodity Fund", amount: 50000 },
+    { date: "2024-07-20", description: "DWS Global Allocation Fund", amount: 45000 }
   ]
 };
 

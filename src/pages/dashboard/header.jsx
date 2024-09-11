@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MenuIcon } from '@heroicons/react/outline'; // Ensure you have HeroIcons v1 installed
+import { FaTrophy } from 'react-icons/fa';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const navigate = useNavigate();
+  const position = 6; // Example score, you can replace it with dynamic data
+
+  const handleClick = () => {
+    navigate('/gamezone'); // Adjust the route as needed
   };
 
   return (
@@ -15,12 +23,18 @@ const Header = () => {
 
       {/* Side navigation button */}
       <div className="relative">
+    <div className='flex flex-row space-x-8'>
+    <div className="flex items-center space-x-2 cursor-pointer" onClick={handleClick}>
+        <FaTrophy className="text-yellow-500 text-2xl" />
+      <span className="text-lg font-semibold">{position}</span>
+    </div>
         <button
           className="p-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 focus:outline-none"
           onClick={toggleMenu}
         >
           <MenuIcon className="h-6 w-6" aria-hidden="true" />
         </button>
+    </div>
 
         {/* Dropdown Menu */}
         {menuOpen && (

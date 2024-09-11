@@ -25,7 +25,7 @@ const diversificationData = {
 const DiversificationChart = () => {
   return (
     <div className="bg-white shadow-md rounded-lg p-6 m-4">
-      <h2 className="text-2xl font-bold text-indigo-600 mb-4">Portfolio Diversification</h2>
+      <h2 className="text-xl font-bold mb-4">Portfolio Diversification</h2>
       <Pie data={diversificationData} />
     </div>
   );

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Updated sample data with more products
 const products = [
   {
     fundID: 1,
-    fundName: "Fund A",
+    fundName: "DWS Global Equity Fund",
     type: "Equity",
     rating: 4.5,
     riskLevel: "Moderate",
@@ -19,7 +20,7 @@ const products = [
   },
   {
     fundID: 2,
-    fundName: "Fund B",
+    fundName: "DWS U.S. Government Securities Fund",
     type: "Bond",
     rating: 4.0,
     riskLevel: "Low",
@@ -34,7 +35,7 @@ const products = [
   },
   {
     fundID: 3,
-    fundName: "Fund C",
+    fundName: "DWS Invest Global Focus",
     type: "Real Estate",
     rating: 4.2,
     riskLevel: "Moderate",
@@ -49,7 +50,7 @@ const products = [
   },
   {
     fundID: 4,
-    fundName: "Fund D",
+    fundName: "DWS Invest Global Real Estate Securities",
     type: "Commodities",
     rating: 4.7,
     riskLevel: "High",
@@ -64,7 +65,7 @@ const products = [
   },
   {
     fundID: 5,
-    fundName: "Fund E",
+    fundName: "DWS Global High Yield Bond Fund",
     type: "Mixed Assets",
     rating: 4.3,
     riskLevel: "Moderate",
@@ -79,7 +80,7 @@ const products = [
   },
   {
     fundID: 6,
-    fundName: "Fund F",
+    fundName: "DWS Invest Global Focus",
     type: "Technology",
     rating: 4.8,
     riskLevel: "High",
@@ -92,66 +93,6 @@ const products = [
     fundManager: "Manager F",
     predicted5YearReturn: 25
   },
-  {
-    fundID: 7,
-    fundName: "Fund G",
-    type: "Healthcare",
-    rating: 4.6,
-    riskLevel: "Moderate",
-    year1Return: 9,
-    year3Return: 11,
-    year5Return: 14,
-    aum: 35000000,
-    expenseRatio: 0.4,
-    inceptionDate: "2016-12-05",
-    fundManager: "Manager G",
-    predicted5YearReturn: 16
-  },
-  {
-    fundID: 8,
-    fundName: "Fund H",
-    type: "Utilities",
-    rating: 4.1,
-    riskLevel: "Low",
-    year1Return: 5,
-    year3Return: 6,
-    year5Return: 8,
-    aum: 12000000,
-    expenseRatio: 0.3,
-    inceptionDate: "2020-08-15",
-    fundManager: "Manager H",
-    predicted5YearReturn: 9
-  },
-  {
-    fundID: 9,
-    fundName: "Fund I",
-    type: "Consumer Goods",
-    rating: 4.4,
-    riskLevel: "Moderate",
-    year1Return: 8,
-    year3Return: 10,
-    year5Return: 13,
-    aum: 18000000,
-    expenseRatio: 0.5,
-    inceptionDate: "2013-06-30",
-    fundManager: "Manager I",
-    predicted5YearReturn: 15
-  },
-  {
-    fundID: 10,
-    fundName: "Fund J",
-    type: "Financials",
-    rating: 4.3,
-    riskLevel: "Moderate",
-    year1Return: 7,
-    year3Return: 9,
-    year5Return: 11,
-    aum: 22000000,
-    expenseRatio: 0.4,
-    inceptionDate: "2018-04-22",
-    fundManager: "Manager J",
-    predicted5YearReturn: 13
-  }
 ];
 
 const ProductList = () => {
@@ -172,8 +113,11 @@ const ProductList = () => {
     }
   };
 
-  // Limit to 6 products for display
-  const displayedProducts = products.slice(0, 6);
+  const navigate = useNavigate();
+
+  const handleFundClick = (fundID) => {
+    navigate(`/fund-details/${fundID}`);
+  };
 
   return (
     <div className="p-6">
@@ -192,8 +136,8 @@ const ProductList = () => {
       
       {/* 3x2 grid for the products */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {displayedProducts.map((product) => (
-          <div key={product.fundID} className="bg-white shadow-md rounded-lg p-4">
+        {products.map((product) => (
+          <div key={product.fundID} className="bg-white shadow-md rounded-lg p-4"  onClick={() => handleFundClick(product.fundID)}>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.fundName}</h3>
             <div className="flex flex-col md:flex-row space-x-4">
               {/* Column 1 */}

@@ -95,9 +95,9 @@ const BasketBuilder = () => {
                           className="mr-4 w-1/2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
                       >
                           <option value="">Select Product</option>
-                          <option value="Product 1" disabled={isProductDuplicate('Product 1')}>Product 1</option>
-                          <option value="Product 2" disabled={isProductDuplicate('Product 2')}>Product 2</option>
-                          <option value="Product 3" disabled={isProductDuplicate('Product 3')}>Product 3</option>
+                          <option value="DWS Global High Yield Bond Fund" disabled={isProductDuplicate('DWS Global High Yield Bond Fund')}>DWS Global High Yield Bond Fund</option>
+                          <option value="DWS Invest Global Focus" disabled={isProductDuplicate('DWS Invest Global Focus')}>DWS Invest Global Focus</option>
+                          <option value="DWS Global Allocation Fund" disabled={isProductDuplicate('DWS Global Allocation Fund')}>DWS Global Allocation Fund</option>
                       </select>
                       <input
                           type="number"
